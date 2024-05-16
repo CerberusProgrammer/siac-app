@@ -16,7 +16,6 @@ export default function UsersScreen() {
 
   useEffect(() => {
     if (match == null) {
-      console.log("userscreen");
       UsuariosService.getUsuarios().then((data) => {
         setUsers(data);
         setLoading(false);

@@ -1,4 +1,4 @@
-import { admindomain } from "../config/global/domain";
+import { admindomain } from "../config/global/domains";
 import { Usuario } from "../models/Usuario";
 
 export class UsuariosService {

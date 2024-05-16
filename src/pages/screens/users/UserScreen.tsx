@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { Usuario } from "../../../models/Usuario";
 import { UsuariosService } from "../../../services/UsuariosService";
 import CircularLoading from "../../components/CircularLoading";
-import MainLayout from "../../layouts/MainLayout";
 
 export default function UserScreen() {
   const { id } = useParams();
@@ -18,7 +17,7 @@ export default function UserScreen() {
   }, []);
 
   return (
-    <MainLayout>
+    <>
       {isLoading ? (
         <CircularLoading />
       ) : (
@@ -35,6 +34,6 @@ export default function UserScreen() {
           )}
         </>
       )}
-    </MainLayout>
+    </>
   );
 }

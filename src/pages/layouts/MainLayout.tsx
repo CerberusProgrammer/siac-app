@@ -12,7 +12,7 @@ export default function MainLayout({ children }: Props) {
       <Appbar />
       <Drawerbar />
 
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component="main" sx={{ flexGrow: 1, px: 2 }}>
         <Toolbar />
         {children}
       </Box>
