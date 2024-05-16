@@ -32,7 +32,7 @@ export default function UsersScreen() {
           {loading ? (
             <CircularLoading />
           ) : (
-            <div className="flex flex-col">
+            <div className="grid grid-cols-4">
               {users.map((user) => (
                 <Button
                   component={Link}

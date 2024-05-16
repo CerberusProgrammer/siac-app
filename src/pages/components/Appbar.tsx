@@ -4,15 +4,29 @@ import {
 } from "@mui/icons-material";
 import { Avatar, Breadcrumbs, Menu, Toolbar, Typography } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Appbar() {
   const location = useLocation();
-
   const pathnames = location.pathname.split("/").filter((x) => x);
-
   const [anchorEl, setAnchorEl] = useState(null);
+  const [elevation, setElevation] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > 0) {
+        setElevation(3);
+      } else {
+        setElevation(0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
@@ -25,7 +39,7 @@ export default function Appbar() {
   return (
     <AppBar
       position="fixed"
-      elevation={0}
+      elevation={elevation}
       enableColorOnDark={true}
       sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
       color="secondary"
