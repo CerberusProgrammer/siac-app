@@ -4,11 +4,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import UserMenu from "./UserMenu";
 import BreadcrumbsRoute from "./BreadcrumbsRoute";
+import { useThemeContext } from "../../config/theme/ThemeContext";
 
 export default function Appbar() {
   const [elevation, setElevation] = useState(0);
   const theme = useTheme();
   const isSmallScreen: boolean = useMediaQuery(theme.breakpoints.down("sm"));
+  const { toggleTheme } = useThemeContext();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,6 +46,7 @@ export default function Appbar() {
           {!isSmallScreen && <BreadcrumbsRoute />}
         </div>
         <UserMenu />
+        <button onClick={toggleTheme}>toggle theme</button>{" "}
       </Toolbar>
     </AppBar>
   );
