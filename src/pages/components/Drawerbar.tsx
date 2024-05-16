@@ -42,7 +42,7 @@ export default function Drawerbar() {
         >
           <div className="flex flex-row space-x-3">
             <PersonRounded />
-            <p className=" mt-0.5">Home</p>
+            <p className=" mt-0.5">Users</p>
           </div>
         </NavLink>
       </div>
