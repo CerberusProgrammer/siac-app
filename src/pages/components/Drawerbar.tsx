@@ -1,17 +1,22 @@
 import { HomeRounded, PersonRounded } from "@mui/icons-material";
 import { Drawer, Toolbar } from "@mui/material";
-
 import { NavLink } from "react-router-dom";
 
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 export default function Drawerbar() {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Drawer
       variant="permanent"
       sx={{
-        width: 240,
+        width: isSmallScreen ? 90 : 240,
         flexShrink: 0,
         [`& .MuiDrawer-paper`]: {
-          width: 240,
+          width: isSmallScreen ? 90 : 240,
           boxSizing: "border-box",
         },
       }}
@@ -29,7 +34,7 @@ export default function Drawerbar() {
         >
           <div className="flex flex-row space-x-3">
             <HomeRounded />
-            <p className=" mt-0.5">Home</p>
+            {!isSmallScreen && <p className=" mt-0.5">Home</p>}
           </div>
         </NavLink>
         <NavLink
@@ -42,7 +47,7 @@ export default function Drawerbar() {
         >
           <div className="flex flex-row space-x-3">
             <PersonRounded />
-            <p className=" mt-0.5">Users</p>
+            {!isSmallScreen && <p className=" mt-0.5">Users</p>}
           </div>
         </NavLink>
       </div>

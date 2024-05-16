@@ -14,7 +14,6 @@ export class UsuariosService {
 
       return data.usuarios as Usuario[];
     } catch (error) {
-      console.error("Error fetching usuarios:", error);
       throw error;
     }
   }
@@ -34,7 +33,6 @@ export class UsuariosService {
 
       return data as Usuario;
     } catch (error) {
-      console.error("Error fetching usuarios:", error);
       throw error;
     }
   }

@@ -7,7 +7,6 @@ export default function CircularLoading() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "80vh",
       }}
     >
       <CircularProgress size={50} />
