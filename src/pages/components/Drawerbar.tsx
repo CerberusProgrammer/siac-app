@@ -1,20 +1,8 @@
-import {
-  Box,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  Drawer,
-  Toolbar,
-} from "@mui/material";
+import { Drawer, Toolbar } from "@mui/material";
 
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import { ROUTES } from "../../config/routes/routes";
+import { NavLink } from "react-router-dom";
 
 export default function Drawerbar() {
-  const [selected, setSelected] = useState(0);
-
   return (
     <Drawer
       variant="permanent"
@@ -28,22 +16,29 @@ export default function Drawerbar() {
       }}
     >
       <Toolbar />
-      <Box sx={{ overflow: "auto" }}>
-        {ROUTES.map((text, index) => (
-          <ListItem key={text.title}>
-            <ListItemButton
-              selected={index === selected}
-              component={Link}
-              to={text.to}
-              onClick={() => setSelected(index)}
-              className=" ease-in-out transition hover:scale-105"
-            >
-              <ListItemIcon>{text.icon}</ListItemIcon>
-              <ListItemText primary={text.title} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </Box>
+
+      <div className={"px-4 space-y-2 flex flex-col"}>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `font-bold px-4 py-2 rounded-lg ease-in-out transition hover:scale-105 hover:bg-orange-400 hover:text-white cursor-pointer active:scale-95 active:bg-orange-500 hover:opacity-100 ${
+              isActive ? "bg-orange-100 text-orange-500" : ""
+            }`
+          }
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/users"
+          className={({ isActive }) =>
+            `font-bold px-4 py-2 rounded-lg ease-in-out transition hover:scale-105 hover:bg-orange-400 hover:text-white cursor-pointer active:scale-95 active:bg-orange-500 hover:opacity-100 ${
+              isActive ? "bg-orange-100 text-orange-500" : ""
+            }`
+          }
+        >
+          Users
+        </NavLink>
+      </div>
     </Drawer>
   );
 }

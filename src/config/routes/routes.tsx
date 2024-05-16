@@ -1,18 +1,21 @@
 import HomeScreen from "../../pages/screens/HomeScreen";
-import { ContactPageRounded, HomeRounded } from "@mui/icons-material";
+import UserScreen from "../../pages/screens/users/UserScreen";
 import UsersScreen from "../../pages/screens/users/UsersScreen";
+import { createBrowserRouter } from "react-router-dom";
 
-export const ROUTES = [
+export const ROUTES = createBrowserRouter([
   {
-    title: "Home",
-    to: "/",
+    path: "/",
     element: <HomeScreen />,
-    icon: <HomeRounded />,
   },
   {
-    title: "Users",
-    to: "/users",
+    path: "/users",
     element: <UsersScreen />,
-    icon: <ContactPageRounded />,
+    children: [
+      {
+        path: ":id",
+        element: <UserScreen />,
+      },
+    ],
   },
-];
+]);
