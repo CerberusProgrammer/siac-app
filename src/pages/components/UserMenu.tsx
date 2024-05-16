@@ -1,9 +1,11 @@
 import { KeyboardArrowDownRounded } from "@mui/icons-material";
-import { Avatar, Divider, Menu } from "@mui/material";
+import { Avatar, Divider, Menu, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 
 export default function UserMenu() {
   const [anchorEl, setAnchorEl] = useState(null);
+  const theme = useTheme();
+  const isSmallScreen: boolean = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
@@ -20,12 +22,18 @@ export default function UserMenu() {
         onClick={handleClick}
       >
         <Avatar></Avatar>
-        <div className="text-start">
-          <p className="">User</p>
-          <p className="text-xs opacity-50">Administrador</p>
-        </div>
-        <KeyboardArrowDownRounded />
+
+        {!isSmallScreen && (
+          <>
+            <div className="text-start">
+              <p className="">User</p>
+              <p className="text-xs opacity-50">Administrador</p>
+            </div>
+            <KeyboardArrowDownRounded />
+          </>
+        )}
       </button>
+
       <Menu
         anchorEl={anchorEl}
         keepMounted

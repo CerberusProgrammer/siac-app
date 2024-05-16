@@ -1,4 +1,4 @@
-import { Toolbar } from "@mui/material";
+import { Toolbar, useMediaQuery, useTheme } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -7,6 +7,8 @@ import BreadcrumbsRoute from "./BreadcrumbsRoute";
 
 export default function Appbar() {
   const [elevation, setElevation] = useState(0);
+  const theme = useTheme();
+  const isSmallScreen: boolean = useMediaQuery(theme.breakpoints.down("sm"));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +41,7 @@ export default function Appbar() {
           >
             SIAC
           </Link>
-          <BreadcrumbsRoute />
+          {!isSmallScreen && <BreadcrumbsRoute />}
         </div>
         <UserMenu />
       </Toolbar>
