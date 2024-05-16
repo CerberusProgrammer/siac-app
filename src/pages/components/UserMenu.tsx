@@ -1,5 +1,5 @@
 import { KeyboardArrowDownRounded } from "@mui/icons-material";
-import { Avatar, Menu } from "@mui/material";
+import { Avatar, Divider, Menu } from "@mui/material";
 import { useState } from "react";
 
 export default function UserMenu() {
@@ -48,6 +48,7 @@ export default function UserMenu() {
           >
             Configuración
           </button>
+          <Divider />
           <button
             className=" ease-in-out transition duration-100 hover:scale-105 px-4 py-1 hover:bg-orange-100 opacity-70 hover:opacity-100 font-bold hover:text-orange-500 w-full text-md"
             onClick={handleClose}
