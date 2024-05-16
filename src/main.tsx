@@ -7,6 +7,7 @@ import "@fontsource/roboto/700.css";
 import AppRouter from "./config/routes/AppRouter";
 import { ThemeProvider } from "@emotion/react";
 import { appTheme } from "./config/theme/AppTheme";
+import "../src/index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

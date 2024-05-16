@@ -7,7 +7,7 @@ type Props = { children: JSX.Element | JSX.Element[] };
 
 export default function MainLayout({ children }: Props) {
   return (
-    <Box sx={{ display: "flex" }}>
+    <div style={{ display: "flex" }}>
       <CssBaseline />
       <Appbar />
       <Drawerbar />
@@ -16,6 +16,6 @@ export default function MainLayout({ children }: Props) {
         <Toolbar />
         {children}
       </Box>
-    </Box>
+    </div>
   );
 }

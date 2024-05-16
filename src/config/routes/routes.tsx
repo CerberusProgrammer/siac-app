@@ -1,6 +1,6 @@
 import HomeScreen from "../../pages/screens/HomeScreen";
 import { ContactPageRounded, HomeRounded } from "@mui/icons-material";
-import UsersScreen from "../../pages/screens/UsersScreen";
+import UsersScreen from "../../pages/screens/users/UsersScreen";
 
 export const ROUTES = [
   {

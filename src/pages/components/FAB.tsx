@@ -17,6 +17,7 @@ export default function FAB({ icon, onTap }: Props) {
         zIndex: 1000,
       }}
       onClick={onTap}
+      sx={{}}
     >
       {icon}
     </Fab>

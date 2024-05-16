@@ -1,6 +1,5 @@
 import {
   Box,
-  List,
   ListItem,
   ListItemButton,
   ListItemIcon,
@@ -14,7 +13,7 @@ import { useState } from "react";
 import { ROUTES } from "../../config/routes/routes";
 
 export default function Drawerbar() {
-  const [selected, setSelected] = useState(1);
+  const [selected, setSelected] = useState(0);
 
   return (
     <Drawer
@@ -30,21 +29,20 @@ export default function Drawerbar() {
     >
       <Toolbar />
       <Box sx={{ overflow: "auto" }}>
-        <List>
-          {ROUTES.map((text, index) => (
-            <ListItem key={text.title} disablePadding>
-              <ListItemButton
-                selected={index === selected}
-                component={Link}
-                to={text.to}
-                onClick={() => setSelected(index)}
-              >
-                <ListItemIcon>{text.icon}</ListItemIcon>
-                <ListItemText primary={text.title} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
+        {ROUTES.map((text, index) => (
+          <ListItem key={text.title}>
+            <ListItemButton
+              selected={index === selected}
+              component={Link}
+              to={text.to}
+              onClick={() => setSelected(index)}
+              className=" ease-in-out transition hover:scale-105"
+            >
+              <ListItemIcon>{text.icon}</ListItemIcon>
+              <ListItemText primary={text.title} />
+            </ListItemButton>
+          </ListItem>
+        ))}
       </Box>
     </Drawer>
   );

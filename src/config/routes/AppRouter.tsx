@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ROUTES } from "./routes";
 import MainLayout from "../../pages/layouts/MainLayout";
+import UserScreen from "../../pages/screens/users/UserScreen";
 export default function AppRouter() {
   return (
     <BrowserRouter>
@@ -12,6 +13,14 @@ export default function AppRouter() {
             element={<MainLayout>{route.element}</MainLayout>}
           />
         ))}
+        <Route
+          path="/users/:id"
+          element={
+            <MainLayout>
+              <UserScreen />
+            </MainLayout>
+          }
+        />
         <Route
           path="*"
           element={
