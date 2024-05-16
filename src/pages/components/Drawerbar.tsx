@@ -1,3 +1,4 @@
+import { HomeRounded, PersonRounded } from "@mui/icons-material";
 import { Drawer, Toolbar } from "@mui/material";
 
 import { NavLink } from "react-router-dom";
@@ -26,7 +27,10 @@ export default function Drawerbar() {
             }`
           }
         >
-          Home
+          <div className="flex flex-row space-x-3">
+            <HomeRounded />
+            <p className=" mt-0.5">Home</p>
+          </div>
         </NavLink>
         <NavLink
           to="/users"
@@ -36,7 +40,10 @@ export default function Drawerbar() {
             }`
           }
         >
-          Users
+          <div className="flex flex-row space-x-3">
+            <PersonRounded />
+            <p className=" mt-0.5">Home</p>
+          </div>
         </NavLink>
       </div>
     </Drawer>

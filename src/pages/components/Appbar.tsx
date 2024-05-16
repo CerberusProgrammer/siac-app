@@ -1,4 +1,5 @@
-import { Toolbar } from "@mui/material";
+import { KeyboardArrowDownRounded } from "@mui/icons-material";
+import { Avatar, Toolbar } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import { Link } from "react-router-dom";
 
@@ -18,8 +19,13 @@ export default function Appbar() {
         >
           SIAC
         </Link>
-        <button className="flex flex-row ease-in-out transition duration-100 rounded-lg text-sm px-4 py-2 font-bold opacity-50 hover:bg-orange-100 hover:opacity-100">
-          <p>User</p>
+        <button className="flex flex-row ease-in-out transition duration-100 rounded-lg px-4 py-2 font-bold opacity-50 hover:bg-orange-100 hover:opacity-100 space-x-4">
+          <Avatar></Avatar>
+          <div className="text-start">
+            <p className="">User</p>
+            <p className="text-xs opacity-50">Administrador</p>
+          </div>
+          <KeyboardArrowDownRounded />
         </button>
       </Toolbar>
     </AppBar>
