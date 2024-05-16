@@ -31,7 +31,7 @@ export default function UserMenu() {
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
-        elevation={1}
+        elevation={3}
         anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
         transformOrigin={{ vertical: "top", horizontal: "right" }}
       >
