@@ -81,19 +81,19 @@ export default function Appbar() {
         >
           <div className="space-y-2 flex flex-col">
             <button
-              className=" ease-in-out transition duration-100 hover:scale-105 px-4 py-1 hover:bg-orange-100 opacity-70 hover:opacity-100 font-bold hover:text-orange-500 w-full text-sm"
+              className=" ease-in-out transition duration-100 hover:scale-105 px-4 py-1 hover:bg-orange-100 opacity-70 hover:opacity-100 font-bold hover:text-orange-500 w-full text-md"
               onClick={handleClose}
             >
               Perfil
             </button>
             <button
-              className=" ease-in-out transition duration-100 hover:scale-105 px-4 py-1 hover:bg-orange-100 opacity-70 hover:opacity-100 font-bold hover:text-orange-500 w-full text-sm"
+              className=" ease-in-out transition duration-100 hover:scale-105 px-4 py-1 hover:bg-orange-100 opacity-70 hover:opacity-100 font-bold hover:text-orange-500 w-full text-md"
               onClick={handleClose}
             >
               Configuración
             </button>
             <button
-              className=" ease-in-out transition duration-100 hover:scale-105 px-4 py-1 hover:bg-orange-100 opacity-70 hover:opacity-100 font-bold hover:text-orange-500 w-full text-sm"
+              className=" ease-in-out transition duration-100 hover:scale-105 px-4 py-1 hover:bg-orange-100 opacity-70 hover:opacity-100 font-bold hover:text-orange-500 w-full text-md"
               onClick={handleClose}
             >
               Cerrar sesión
